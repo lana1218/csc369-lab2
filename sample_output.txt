@@ -1,0 +1,101 @@
+// Problem 1
+> ./gradlew run --args="URLCount input_access_log/ out_wc/"
+output:
+/	31
+/AmavisNew.html	11
+/DCC.html	2
+/LateEmail.html	4
+/M83A	1
+/MSOffice/cltreq.asp?UL=1&ACT=4&BUILD=2614&STRMVER=4&CAPREQ=0	1
+/RBL.html	5
+/SpamAssassin.html	12
+/_vti_bin/owssvr.dll?UL=1&ACT=4&BUILD=2614&STRMVER=4&CAPREQ=0	1
+/antivirus.html	1
+...
+
+> ./gradlew run --args="ReverseKeyValue out_wc/ q1/"
+1	/twiki/view/Main/WebHome
+1	/twiki/pub/TWiki/TWikiLogos/twikiRobot88x31.gif
+1	/twiki/pub/TWiki/TWikiLogos/twikiRobot131x64.gif
+1	/twiki/pub/TWiki/TWikiDocGraphics/tip.gif
+1	/twiki/bin/view/TWiki/d43
+1	/twiki/bin/view/TWiki/WikiWord?rev=1.3
+1	/twiki/bin/view/TWiki/WikiTopic
+1	/twiki/bin/view/TWiki/WikiSyntax
+1	/twiki/bin/view/TWiki/WikiReferences?skin=print
+1	/twiki/bin/view/TWiki/WikiNotation?skin=print
+
+
+
+// Problem 2
+> ./gradlew run --args="HTTPCount input_access_log/ q2/"
+output:
+200	1272
+302	6
+401	123
+404	5
+
+
+
+// Problem 3
+> ./gradlew run --args="HostnameCount input_access_log/ q3/"
+output:
+64.242.88.10	5745035
+
+
+
+// Problem 4
+> ./gradlew run --args="URLClientCount input_access_log/ out4_wc/"
+output:
+0x503e4fce.virnxx2.adsl-dhcp.tele.dk	1
+212.21.228.26	1
+64-93-34-186.client.dsl.net	1
+64.242.88.10	1
+68-174-110-154.nyc.rr.com	1
+alille-251-1-2-197.w82-124.abo.wanadoo.fr	1
+archserve.id.ucsb.edu	1
+c-24-11-14-147.client.comcast.net	1
+c-411472d5.04-138-73746f22.cust.bredbandsbolaget.se	1
+cacher2-ext.wise.edt.ericsson.se	1
+...
+
+> ./gradlew run --args="ReverseKeyValue out4_wc/ q4/"
+output:
+1	wwwcache.lanl.gov
+1	vlp181.vlp.fi
+1	ts04-ip92.hevanet.com
+1	spica.ukc.ac.uk
+1	rouble.cc.strath.ac.uk
+1	proxy0.haifa.ac.il
+1	pd9e50809.dip.t-dialin.net
+1	pd95f99f2.dip.t-dialin.net
+1	market-mail.panduit.com
+1	lordgun.org
+
+
+
+// Problem 5
+> ./gradlew run --args="DateCount input_access_log/ q5/"
+output:
+2004-03	1406
+
+
+
+// Problem 6
+> ./gradlew run --args="DayCount input_access_log/ out6_wc/"
+output:
+2004-03-07	2427368
+2004-03-08	4617302
+2004-03-09	978411
+2004-03-10	1357604
+2004-03-11	1265093
+2004-03-12	287227
+
+> ./gradlew run --args="ReverseKeyValue out6_wc/ q6/"
+output:
+287227	2004-03-12
+978411	2004-03-09
+1265093	2004-03-11
+1357604	2004-03-10
+2427368	2004-03-07
+4617302	2004-03-08

@@ -2,10 +2,6 @@ package csc369;
 
 import java.io.IOException;
 
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
-
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.conf.Configuration;
@@ -24,20 +20,40 @@ public class HadoopApp {
 	    System.out.println("Expected parameters: <job class> <input dir> <output dir>");
 	    System.exit(-1);
 	} else if ("WordCount".equalsIgnoreCase(otherArgs[0])) {
-	    job.setReducerClass(WordCount.ReducerImpl.class);
-	    job.setMapperClass(WordCount.MapperImpl.class);
-	    job.setOutputKeyClass(WordCount.OUTPUT_KEY_CLASS);
-	    job.setOutputValueClass(WordCount.OUTPUT_VALUE_CLASS);
-	} else if ("AccessLog".equalsIgnoreCase(otherArgs[0])) {
-	    job.setReducerClass(AccessLog.ReducerImpl.class);
-	    job.setMapperClass(AccessLog.MapperImpl.class);
-	    job.setOutputKeyClass(AccessLog.OUTPUT_KEY_CLASS);
-	    job.setOutputValueClass(AccessLog.OUTPUT_VALUE_CLASS);
-        } else if ("AccessLog2".equalsIgnoreCase(otherArgs[0])) {
-	    job.setReducerClass(AccessLog2.ReducerImpl.class);
-	    job.setMapperClass(AccessLog2.MapperImpl.class);
-	    job.setOutputKeyClass(AccessLog2.OUTPUT_KEY_CLASS);
-	    job.setOutputValueClass(AccessLog2.OUTPUT_VALUE_CLASS);
+	    job.setReducerClass(URLCount.ReducerImpl.class);
+	    job.setMapperClass(URLCount.MapperImpl.class);
+	    job.setOutputKeyClass(URLCount.OUTPUT_KEY_CLASS);
+	    job.setOutputValueClass(URLCount.OUTPUT_VALUE_CLASS);
+	} else if ("ReverseKeyValue".equalsIgnoreCase(otherArgs[0])) {
+		job.setReducerClass(ReverseKeyValue.ReducerImpl.class);
+		job.setMapperClass(ReverseKeyValue.MapperImpl.class);
+		job.setOutputKeyClass(ReverseKeyValue.OUTPUT_KEY_CLASS);
+		job.setOutputValueClass(ReverseKeyValue.OUTPUT_VALUE_CLASS);
+	} else if ("HTTPCount".equalsIgnoreCase(otherArgs[0])) {
+		job.setReducerClass(HTTPCount.ReducerImpl.class);
+		job.setMapperClass(HTTPCount.MapperImpl.class);
+		job.setOutputKeyClass(HTTPCount.OUTPUT_KEY_CLASS);
+		job.setOutputValueClass(HTTPCount.OUTPUT_VALUE_CLASS);
+	} else if ("HostnameCount".equalsIgnoreCase(otherArgs[0])) {
+		job.setReducerClass(HostnameCount.ReducerImpl.class);
+		job.setMapperClass(HostnameCount.MapperImpl.class);
+		job.setOutputKeyClass(HostnameCount.OUTPUT_KEY_CLASS);
+		job.setOutputValueClass(HostnameCount.OUTPUT_VALUE_CLASS);
+	} else if ("URLClientCount".equalsIgnoreCase(otherArgs[0])) {
+		job.setReducerClass(URLClientCount.ReducerImpl.class);
+		job.setMapperClass(URLClientCount.MapperImpl.class);
+		job.setOutputKeyClass(URLClientCount.OUTPUT_KEY_CLASS);
+		job.setOutputValueClass(URLClientCount.OUTPUT_VALUE_CLASS);
+	} else if ("DateCount".equalsIgnoreCase(otherArgs[0])) {
+		job.setReducerClass(DateCount.ReducerImpl.class);
+		job.setMapperClass(DateCount.MapperImpl.class);
+		job.setOutputKeyClass(DateCount.OUTPUT_KEY_CLASS);
+		job.setOutputValueClass(DateCount.OUTPUT_VALUE_CLASS);
+	} else if ("DayCount".equalsIgnoreCase(otherArgs[0])) {
+		job.setReducerClass(DayCount.ReducerImpl.class);
+		job.setMapperClass(DayCount.MapperImpl.class);
+		job.setOutputKeyClass(DayCount.OUTPUT_KEY_CLASS);
+		job.setOutputValueClass(DayCount.OUTPUT_VALUE_CLASS);
 	} else {
 	    System.out.println("Unrecognized job: " + otherArgs[0]);
 	    System.exit(-1);
